@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *:not(h3){
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <label for="str">Enter Number between 0 and 999: </label>
+    <input id="str" onchange="callMe(this.value)" type="number" max="999" min="0">
+    <br>
+    <p>In String</p>
+    <h3 id="dis" > </h3>
+    <script>
+        let d = document.getElementById('dis')
+        let tens = ['zero','']
+        function callMe(val) {
+            console.log(val);
+        }
+    </script>
+</body>
+</html>

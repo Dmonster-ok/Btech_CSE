@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav h2,
+        footer h3 {
+            display: block;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px 0px;
+        }
+
+        .container {
+            display: block;
+            overflow: hidden;
+        }
+
+        .box {
+            display: inline-block;
+        }
+
+        .box:first-child {
+            float: left;
+            width: 65%;
+        }
+
+        .box:last-child {
+            float: right;
+            width: 35%;
+
+        }
+
+        .box div {
+            background-color: #dfdfdf;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .box p {
+            text-align: justify;
+        }
+
+        .box h4 {
+            margin: 3px 0px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .box {
+                display: block;
+            }
+            .box:first-child {
+                width: 100%;
+                float: none;
+            }
+            
+            .box:last-child {
+                width: 100%;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h2>Header</h2>
+    </nav>
+    <div class="container">
+        <section class="box">
+            <div>
+                <h4>Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sunt dignissimos corrupti nemo
+                    voluptatum excepturi, quo in asperiores praesentium quidem ipsum facere soluta laudantium cum natus
+                    molestiae perferendis qui alias.</p>
+            </div>
+        </section>
+        <section class="box">
+            <div>
+                <h4>Side</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sunt dignissimos corrupti nemo
+                    voluptatum excepturi.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <h3>CC 2024</h3>
+    </footer>
+</body>
+
+</html>

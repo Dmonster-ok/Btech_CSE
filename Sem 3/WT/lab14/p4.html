@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+                integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <style>
+                * {
+                        padding: 0;
+                        margin: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+
+                button {
+                        font-size: larger;
+                        padding: .5em 2em;
+                        border-radius: .5em;
+                }
+        </style>
+</head>
+
+<body>
+        <button id="btn">Click!</button>
+        <ul id="ul">
+        </ul>
+        <script>
+                let c = 0
+                $(document).ready(() => {
+                        $("#btn").click(function(){
+                                $("#ul").append(`<li>Item ${c++}</li>`)
+                                $('li').click(function () {
+                                        $(this).css({"background-color":"yellow","margin-bottom":"2em","transition": ".2s"})
+                                        $(this).fadeOut()
+                                })
+                        })
+                })
+        </script>
+</body>
+
+</html>

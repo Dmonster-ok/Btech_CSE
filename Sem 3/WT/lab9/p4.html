@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <h1 id="display"> </h1>
+    <h1 id="sorted"> </h1>
+
+    <script>
+        let arr = [10,80,30,90,40]
+        
+        const pivot = arr[arr.length-1]
+        const n = arr.length
+        // while (true) {
+        //     let val = prompt("Enter value (q to quit)")
+        //     if (val.toLowerCase() === 'q') break;
+        //     arr.push(parseInt(val))
+        // }
+        document.getElementById('display').innerHTML = "Origal array: "+ arr
+
+        //quick sort
+
+        document.getElementById('sorted').innerHTML = "Sorted array: " + arr
+    </script>
+</body>
+
+</html>

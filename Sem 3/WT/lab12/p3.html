@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #btn {
+        margin-top: 50px;
+        font-size: larger;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="display"></h2>
+    <script>
+      let display = document.getElementById("display");
+      function eve(val) {
+        display.innerText = "key " + val.code;
+      }
+
+      window.addEventListener('keydown',(e)=>{
+        eve(e)
+      })
+    </script>
+  </body>
+</html>

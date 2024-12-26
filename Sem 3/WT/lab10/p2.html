@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-around; */
+            gap: 10px;
+            padding: 20px;
+        }
+        .card {
+            width: 24%;
+            padding: 0;
+            border: 2px solid black;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        .pfp {
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .name {
+            padding-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .ctc {
+            text-align: center;
+            padding: 0;
+            color: #562323;
+            border-bottom: 2px solid black;
+            margin-bottom: 5px;
+        }
+        .dis {
+            padding: 5px;
+        }
+        .dis span {
+            color: #562323;
+        }
+        .cmp {
+            width: 30%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="db.js"></script>
+    <script>
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        students.forEach(element => {
+            let card = document.createElement("div");
+            card.className = "card";
+            card.id = "stu"+element.id;
+            card.innerHTML = `
+                <img class = "pfp" src="${element.photo}" alt="${element.name}">
+                <div class="content">
+                    <h2 class="name">${element.name}</h2>
+                    <h3 class="dis ctc">${element.ctcpa}</h3>
+                    <h3 class="dis">${element.branch}</h3>
+                    <h3 class="dis"><span>${element.place}</span></h3>
+                    <img class = "cmp" src="${element.placed_in}">
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        document.body.appendChild(grid);
+    </script>
+</body>
+
+</html>

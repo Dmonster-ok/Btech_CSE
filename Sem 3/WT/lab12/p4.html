@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="fm">
+        <h2 id="display"></h2>
+        <input type="text" placeholder="enter">
+        <br>
+        <input type="submit" >
+        <input type="reset" >
+    </form>
+    <script>
+        let display = document.getElementById("display");
+        let form = document.getElementById('fm')
+        function dis(event) {
+            if(event.type == 'submit'){
+                display.innerText = 'submitted'
+                event.preventDefault()
+            }
+            if (event.type == 'reset') {
+                display.innerText = 'reset'
+            }
+        }
+        form.addEventListener("submit",dis);
+        form.addEventListener("reset",dis);
+    </script>
+  </body>
+</html>

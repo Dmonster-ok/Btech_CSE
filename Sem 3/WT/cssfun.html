@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            background: #cac2e9;
+        }
+        
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            transition-duration: 0.5s;
+            transition-delay: 0.5s;
+            transition-timing-function: ease-in-out;
+            box-shadow: -4px -4px 6px 0 #E3DCFF66,
+            4px 4px 6px 0 #5D4B8420,
+            inset 4px 4px 6px 0 #E3DCFF66,
+            inset -4px -4px 6px 0 #5D4B8420;
+        }
+        .box div{
+            width: 400px;
+            height: 400px;
+            transition-delay: 0.4s;
+        }
+        .box div div{
+            width: 300px;
+            height: 300px;
+            transition-delay: 0.3s;
+        }
+        .box div div div{
+            width: 200px;
+            height: 200px;
+            transition-delay: 0.2s;
+        }
+        .box div div div div{
+            width: 100px;
+            height: 100px;
+            transition-delay: 0.1s;
+        }
+
+        .box:hover{
+            box-shadow: -20px -20px 20px 0 #E3DCFF60,
+            10px 10px 20px 0 #5D4B8440,
+            inset 4px 4px 6px 0 #E3DCFF;
+        }
+    </style>
+</head>
+<body class="center">
+    <div class="box center">
+        <div class="box center">
+            <div class="box center">
+                <div class="box center">
+                    <div class="box center">
+                        <div class="box center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
