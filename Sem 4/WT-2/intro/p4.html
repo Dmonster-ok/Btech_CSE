@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = prompt("Enter numbers comma seprated");
+        arr = arr.split(",").map(val => parseInt(val));
+        document.write("Befor: ",arr)
+        let n = arr.length
+        
+        function quicksort(arr, lb, ub) {
+            let flag = true
+            if (lb < ub) {
+                i = lb
+                j = ub + 1
+                key = arr[lb]
+                while (flag) {
+                    i += 1
+                    while (arr[i] < key) {
+                        i += 1
+                    }
+                    j -= 1
+                    while (arr[j] > key) {
+                        j -= 1
+                    }
+                    if (i < j) {
+                        tmp = arr[i]
+                        arr[i] = arr[j]
+                        arr[j] = tmp
+                    } else {
+                        flag = false
+                    }
+                }
+                tmp = arr[lb]
+                arr[lb] = arr[j]
+                arr[j] = tmp
+                quicksort(arr,lb,j-1)
+                quicksort(arr,j+1,ub)
+            }
+            return arr
+        }
+        console.log(quicksort(arr, 0, n - 1))
+        document.write("After: ",arr)
+
+    </script>
+</body>
+
+</html>
