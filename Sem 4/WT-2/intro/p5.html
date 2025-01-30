@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="search" onchange="search(this)" placeholder="Search">
+    <p id="display"> </p>
+    <script>
+        function search(ele) {
+            let str = 'The quick brown fox jumps over the lazy dog'
+            let key = ele.value
+            const display = document.getElementById('display')
+            let out = str.split(' ').indexOf(key)
+            console.log(out);
+
+            if (out != -1) {
+                display.innerText = "Search found at " + out
+            } else {
+                display.innerText = "Search not found"
+            }
+        }
+    </script>
+</body>
+
+</html>
