@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    @apply text-gray-50;
+}
+
+body{
+    @apply bg-gray-900 m-4;
+
+}
+
+select{
+    @apply bg-gray-800;
+}
+
+option{
+    @apply bg-gray-800;
+}

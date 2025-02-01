@@ -1,4 +1,4 @@
-import students from '../data/students.js';
+import students from '../../data/students';
 
 function Student(name, language, key) {
     return (
@@ -9,7 +9,7 @@ function Student(name, language, key) {
     )
 }
 
-export default function Faculties() {
+export default function Faculties(format) {
     return (
         <div className='flex flex-wrap m-5'>
             <div className='text-3xl'>Student :</div>

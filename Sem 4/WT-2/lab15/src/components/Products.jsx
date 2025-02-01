@@ -1,4 +1,4 @@
-import products from '../data/products.js';
+import products from '../../data/products.js';
 
 function Product(name, price,key) {
     return (
@@ -9,7 +9,7 @@ function Product(name, price,key) {
     )
 }
 
-export default function Products() {
+export default function Products(format) {
     return (
         <div className='flex flex-wrap m-5'>
             <div className='text-3xl'>Product :</div>
