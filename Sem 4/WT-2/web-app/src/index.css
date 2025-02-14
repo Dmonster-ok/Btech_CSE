@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-black flex justify-center items-center h-screen;
+}
+
+*, *::before, *::after {
+  @apply text-amber-50; 
+}
