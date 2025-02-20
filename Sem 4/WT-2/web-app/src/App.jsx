@@ -1,7 +1,6 @@
-import Main from "./lab18/main.jsx"
+import Main from "./lab19/main.jsx"
 
 function App() {
-
   return (
     <>
       <Main /> 

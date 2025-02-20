@@ -4,6 +4,12 @@ body {
   @apply bg-black flex justify-center items-center h-screen;
 }
 
-*, *::before, *::after {
-  @apply text-amber-50; 
+*,
+*::before,
+*::after {
+  @apply text-amber-50;
+}
+
+.btn {
+  @apply p-3 rounded-md border border-amber-50 flex items-center justify-center;
 }

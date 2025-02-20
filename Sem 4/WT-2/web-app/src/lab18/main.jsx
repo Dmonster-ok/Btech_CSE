@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function Main() {
 
-    const [time, setTime] = useState(3)
+    const [time, setTime] = useState(10)
     useEffect(() => {
         const interval = setInterval(() => {
             if (time <= 0) {
@@ -12,12 +12,12 @@ export default function Main() {
             setTime((time) => time - 1)
         }, 1000)
         return () => clearInterval(interval)
-    }, [])
+    }, [time])
 
     return (
         <>
-            <h1 className="text-3xl">Time: {time}</h1>
-            <Counter />
+            {time != 0 && <h1 className="text-5xl">{time}</h1>}
+            { time == 0 && <Counter />}
         </>
     )
 }
