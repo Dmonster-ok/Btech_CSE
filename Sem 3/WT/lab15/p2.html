@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"
+		integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+                        font-size: larger;
+		}
+
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+                        flex-direction: column;
+                        gap: 2em;
+		}
+
+		button {
+			padding: .5em 2em;
+			border-radius: .5em;
+		}
+	</style>
+</head>
+
+<body>
+	<button id="btn">Click!</button>
+        <p></p>
+	<script>
+		$(document).ready(() => {
+			$("#btn").click(function () {
+				$("p").text("Clicked")
+			})
+                        $("#btn").dblclick(function () {
+				$("p").text("Double Clicked")
+			})
+                        $("#btn").mouseenter(function () {
+				$("p").text("Hover")
+			})
+                        $("#btn").mouseleave(function () {
+				$("p").text("")
+			})
+		})
+	</script>
+</body>
+
+</html>

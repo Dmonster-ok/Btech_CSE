@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="calc()">Calculate</button>
+
+    <script>
+        function calc() {
+            const a = parseInt(prompt("Enter A"))
+            const b = parseInt(prompt("Enter A"))
+            const o = prompt("Enter expression")
+    
+            switch (o) {
+                case '+':
+                    console.log(a+b);
+                    break;
+                case '-':
+                    console.log(a-b);
+                    break;
+                case '*':
+                    console.log(a*b);
+                    break;
+                case '/':
+                    console.log(a/b);
+                    break;
+                case '%':
+                    console.log(a%b);
+                    break;
+            
+                default:
+                    console.log('invalid opration');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

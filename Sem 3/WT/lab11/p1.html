@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: xx-large;
+            box-sizing: border-box;
+            font-family: 'Chakra Petch', monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            border: 2px ridge snow;
+            border-radius: 5px;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        .btns {
+            width: 330px;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            border: 1.5px outset snow;
+            background-color: #b6b6b6;
+        }
+
+        .btn:disabled {
+            background-color: #757575;
+            color: #222;
+        }
+
+        .display {
+            color: white;
+            padding: 10px;
+            height: 100px;
+            border: 1px inset snow;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: 100;
+            text-align: right;
+            width: 330px;
+            overflow: hidden;
+        }
+
+        .btns .eql {
+            flex: 2;
+            font-size: 1.5em;
+        }
+
+        sup {
+            font-size: .6em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="display"> </div>
+        <div class="btns">
+            <button class="btn" value="xy" onclick="val(this.value)">x<sup>y</sup></button>
+            <button class="btn" value="log" onclick="val(this.value)">log</button>
+            <button class="btn" value="sqrt" onclick="val(this.value)">&radic;</button>
+            <button class="btn" value="sin" onclick="val(this.value)">sin</button>
+            <button class="btn" value="*-1" onclick="val(this.value)">+/-</button>
+            <button class="btn" value="0" onclick="val(this.value)">0</button>
+            <button class="btn" value="." onclick="val(this.value)">.</button>
+            <button class="btn" value="+" onclick="val(this.value)">+</button>
+            <button class="btn" value="1" onclick="val(this.value)">1</button>
+            <button class="btn" value="2" onclick="val(this.value)">2</button>
+            <button class="btn" value="3" onclick="val(this.value)">3</button>
+            <button class="btn" value="-" onclick="val(this.value)">-</button>
+            <button class="btn" value="4" onclick="val(this.value)">4</button>
+            <button class="btn" value="5" onclick="val(this.value)">5</button>
+            <button class="btn" value="6" onclick="val(this.value)">6</button>
+            <button class="btn" value="*" onclick="val(this.value)">&#215;</button>
+            <button class="btn" value="7" onclick="val(this.value)">7</button>
+            <button class="btn" value="8" onclick="val(this.value)">8</button>
+            <button class="btn" value="9" onclick="val(this.value)">9</button>
+            <button class="btn" value="/" onclick="val(this.value)">/</button>
+            <button class="btn eql" onclick="cal()">=</button>
+            <button class="btn" onclick="cls()">C</button>
+            <button class="btn" onclick="apop()">&larr;</button>
+        </div>
+    </div>
+    <script>
+        var eq = [];
+        var out = document.querySelector('.display');
+        function val(a) {
+            if (a == "*-1") {
+                if (eq[0] == null) {
+                    return;
+                }
+                let tmp = eq.join('');
+                eq = []
+                eq.push(eval(tmp + a));
+            }
+            else if (a == "xy") {
+                if (eq[0] == null) {
+                    return;
+                }
+                eq.push("**");
+            }
+            else if (a == "log") {
+                if (eq[0] == null) {
+                    return;
+                }
+                let tmp = eq.join('');
+                eq = []
+                eq.push(Math.log(tmp));
+            }
+            else if (a == "sqrt") {
+                if (eq[0] == null) {
+                    return;
+                }
+                let tmp = eq.join('');
+                eq = []
+                eq.push(Math.sqrt(tmp))
+            }
+            else if (a == "sin") {
+                if (eq[0] == null) {
+                    return;
+                }
+                let tmp = eq.join('');
+                eq = []
+                eq.push(Math.sin(tmp))
+            }
+            else {
+                eq.push(a);
+            }
+            out.innerHTML = eq.join('').replace("**", "^");
+        }
+        function cal() {
+            out.innerHTML = eval(eq.join(''));
+        }
+        function cls() {
+            eq = [];
+            out.innerHTML = eq.join('');
+        }
+        function apop() {
+            eq.pop();
+            out.innerHTML = eq.join('');
+        }
+    </script>
+</body>
+
+</html>

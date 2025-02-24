@@ -27,6 +27,11 @@ export default function Main() {
             if (eq[eq.length - 1] === "+" || eq[eq.length - 1] === "-" || eq[eq.length - 1] === "*" || eq[eq.length - 1] === "/") return;
         }
 
+        if (a === "0") {
+            if (eq.length === 0) return;
+            if (eq[eq.length - 1] === "0" && eq[eq.length - 2] === "/") return;
+        }
+
         if (a === "mod") {
             if (eq.length === 0) return;
             if (eq[eq.length - 1] === "+" || eq[eq.length - 1] === "-" || eq[eq.length - 1] === "*" || eq[eq.length - 1] === "/") return;

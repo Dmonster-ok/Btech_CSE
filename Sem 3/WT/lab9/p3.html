@@ -1,0 +1,33 @@
+<html>
+
+<body>
+    <h1 id="display"> </h1>
+    <h1 id="sorted"> </h1>
+
+    <script>
+        let arr = []
+        while (true) {
+            let val = prompt("Enter value (q to quit)")
+            if (val.toLowerCase() === 'q') break;
+            arr.push(parseInt(val))
+        }
+        arr.forEach((val) => console.log(`${val} `))
+        document.getElementById('display').innerHTML = "Origal array: "+ arr
+
+        n = arr.length
+        
+        //bubble sort
+        for (let pass = 0; pass < n-1; pass++) {
+            for (let j = 0; j < n - pass - 1; j++) {
+                if (arr[j] >= arr[j+1]) {
+                    tmp = arr[j]
+                    arr[j] = arr[j+1]
+                    arr[j+1] = tmp
+                }
+            }
+        }
+        document.getElementById('sorted').innerHTML = "Sorted array: " + arr
+    </script>
+</body>
+
+</html>
