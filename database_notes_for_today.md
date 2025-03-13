@@ -1,3 +1,6 @@
+# Flutter DB CRUD Notes
+
+```dart
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -50,3 +53,12 @@ class DB {
     await db.delete("users");
   }
 }
+```
+
+- date: 13-03-2025
+- author: Koinai
+- LICENSE: Skibbidi
+
+---
+
+THANK YOU FOR READING THIS SHIT
