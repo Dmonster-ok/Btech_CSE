@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/Navigation";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -25,18 +24,13 @@ export default function RootLayout({
       <body
         className={`${lato.variable} box-border w-dvw h-dvh`}
       >
-    <div className='w-full h-full p-5'>
-      <div className='border p-4 border-gray-300 h-full'>
-        <div className='h-full flex flex-row'>
-          <div className='w-1/3 h-full'>
-            <Navigation />
-          </div>
-          <div className='w-2/3 h-full border'>
-            {children}
+        <div className='w-full h-full p-5'>
+          <div className='border p-4 border-gray-300 h-full'>
+            <div className='h-full flex flex-row'>
+                {children}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
       </body>
     </html>
