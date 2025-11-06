@@ -1,4 +1,6 @@
+import { AnimatePresence, motion } from "framer-motion";
 import type { Metadata } from "next";
+import { useRouter } from "next/navigation";
 import { Lato } from "next/font/google";
 import "./globals.css";
 
@@ -19,6 +21,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
   return (
     <html lang="en">
       <body
@@ -27,7 +31,18 @@ export default function RootLayout({
         <div className='w-full h-full p-5'>
           <div className='border p-4 border-gray-300 h-full'>
             <div className='h-full flex flex-row'>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={router.prefetch.toString()}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full"
+                >
                 {children}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>

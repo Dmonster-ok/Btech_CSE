@@ -64,11 +64,11 @@ function Contact() {
 						<div className="space-y-6 text-xl font-light text-black dark:text-white">
 							<p>I'm always excited to collaborate on:</p>
 							<ul className="space-y-3 text-lg">
-								<li>• Creative web development projects</li>
-								<li>• Digital art commissions</li>
-								<li>• UI/UX design work</li>
-								<li>• Academic collaborations</li>
-								<li>• Open source contributions</li>
+								<li>Creative web development projects •</li>
+								<li>Digital art commissions •</li>
+								<li>UI/UX design work •</li>
+								<li>Academic collaborations •</li>
+								<li>Open source contributions •</li>
 							</ul>
 						</div>
 					</div>
